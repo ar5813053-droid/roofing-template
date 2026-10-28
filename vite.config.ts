@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite';
 import { cloudflare } from '@cloudflare/vite-plugin';
-// ... import your framework plugin, e.g., tanstack/react-start
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [
     cloudflare({
       viteEnvironment: { name: 'ssr' }
     }),
-    // ... your framework plugin here (e.g., tanStackStartVite())
+    tailwindcss(),
+    react(),
   ],
 });
